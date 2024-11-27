@@ -1,0 +1,26 @@
+<div>
+  <h2>Employee List</h2>
+  <button routerLink="/create-employee" class="btn btn-primary">Add Employee</button><br><br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Firstname</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">Email</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td scope="row">{{ employee.firstName }}</td>
+        <td scope="row">{{ employee.lastName }}</td>
+        <td scope="row">{{ employee.emailId }}</td>
+        <td scope="row">
+          <button (click)="deleteEmployee(employee.id)" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>&nbsp;&nbsp;
+          <button (click)="updateEmployee(employee.id)" class="btn btn-info"><i class="fa-regular fa-pen-to-square"></i> Update</button>&nbsp;&nbsp;
+          <button (click)="employeeDetails(employee.id)" class="btn btn-info"><i class="fa fa-eye"></i> Details</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
